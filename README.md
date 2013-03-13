@@ -1,4 +1,4 @@
-DOCM
+DORM
 ====
 
-DOCM (Document Object Creation Model). Create HTML elements and attach properties to them.
+DORM (Document Object Render Model). Render HTML elements and attach properties to them.
