@@ -8,8 +8,8 @@ TODO
 ----
      1	+ bind JavaScript events
      2	+ Pretty identation for output
-     3	+ Insert TEXT as content of TAG
-     4	+ Insert ATTR on tags
-     5	+ find solution for <span> in the middle of TEXT
-     6	- Insert inline stylesheets
-     7	- deal with self-closed elements like <br>
+     3	+ find solution for <span> in the middle of TEXT
+     4	- Insert inline stylesheets
+     5	- deal with self-closed elements like <br>
+     6	- Insert ATTR on tags
+     7	- Insert TEXT as content of TAG

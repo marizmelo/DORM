@@ -22,6 +22,10 @@ dorm.attr = function (attr) {
   return attreturn;
 }
 
+dorm.text = function (text) {
+  // insert text on tag element
+}
+
 dorm.pretty = function (code) {
   // indent HTML code
 }
@@ -43,13 +47,11 @@ dorm.render = function(dom) {
       opentag += ">";
     }//if_else
     
-    console.log(opentag);
+    console.log(opentag); // writes the open tag element
     
-    if( typeof(dom[key]) == "object") {
-      console.log( "\t" + Object.keys(dom[key]) );
-    }else{
-      console.log(dom[key]);
-    }//if_else
+    if(dom[key]["text"]) {
+      console.log( "    " + dom[key]["text"] );
+    }
     
     if(dom[key]["children"] && dom[key]["children"].length > 0) {
 
@@ -84,7 +86,9 @@ dorm.render({
               },
               "link": {
               },
-              "title": "hello world"
+              "title": {
+                "text" : "hello world"
+              }
             }
           ]
         }
@@ -107,7 +111,7 @@ dorm.render({
                   "name": "mydiv2name"
                 },
                 "children":[
-                  { "span" :  "hello you" }
+                  { "span" :  { "text" : "hello you" } }
                 ]
               }
             }
