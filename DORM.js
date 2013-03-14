@@ -22,10 +22,6 @@ dorm.attr = function (attr) {
   return attreturn;
 }
 
-dorm.text = function (text) {
-  // insert text on tag element
-}
-
 dorm.pretty = function (code) {
   // indent HTML code
 }
