@@ -32,7 +32,8 @@ dorm.pretty = function (code) {
 
 dorm.class = function(classes) {
   // receive an array with classes of the element and generate html syntax
-  return " class=\""+escape(classes.toString())+"\"";
+  //return " class=\""+escape(classes.toString())+"\"";
+  return " class=\""+classes.toString().replace(","," ")+"\"";
 }
 
 dorm.render = function(dom) {
@@ -74,7 +75,8 @@ dorm.render({
     },
     "attr" : {
       "class": [
-      "responsive"
+      "responsive",
+      "width-full"
       ]
     },
     "children": [
