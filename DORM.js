@@ -96,15 +96,10 @@ dorm.render({
       {
         "head": {
           "children": [
-            {
-              "meta": {
-              },
-              "link": {
-              },
-              "title": {
-                "children" : [{"text" : "hello world"}]
-              }
-            }
+            { "meta": {}}, 
+            {"link": {}}, 
+            { "title": { "children" : [{"text" : "hello world"}] }}, 
+            {"script" : {"attr":{"href": "//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"}}}
           ]
         }
       },
