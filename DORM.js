@@ -3,13 +3,17 @@
   author: Mariz Melo (c) MIT 2013
 */
 
-var DORM = function(){};
-var dorm = DORM.prototype;
+// Dependencies
+var html = require("html"); // prettify HTML lib (replace later)
+
+// Object constructor
+var DORM = function(){};  // object constructor
+var dorm = DORM.prototype;  // cache prototype
 
 // configuration model
 dorm.model = {
-  tabspace : 4,  // indentation space
-  selfclose : ["meta", "br", "link"]
+  tabspace : 4  // indentation space
+, selfclose : ["meta", "br", "hr", "link"]  // HTML tags that are self-closed
 }
 
 // function chains feature
@@ -62,7 +66,7 @@ dorm.tagclose = function(tag) {
   return "</"+tag+">";
 }.chain();
 
-dorm.render = function(dom) {
+dorm.buffer = function(dom) {
   // renders the entire DORM objects
   // look for all tag elements
   for (var key in dom) {
@@ -78,23 +82,27 @@ dorm.render = function(dom) {
       if(dom[key]["children"] && dom[key]["children"].length > 0) {
 
         // go over all children elements
-        for(var i=0; i<= dom[key]["children"].length; ++i) {
-          dorm.render(dom[key]["children"][i]); // recursive call for other tag elements
+        for(var i=0; i <= dom[key]["children"].length; ++i) {
+          dorm.buffer(dom[key]["children"][i]); // recursive call for other tag elements
         }
       }
 
       // check for self-closing elements
       if(dorm.model.selfclose.indexOf(key) == -1){
-        console.log( dorm.tagclose(key) );
+        console.log( dorm.tagclose(key));
       }
 
     }//if-else (key === "text")
 
   }//for (var key in dom)
+};
+
+dorm.render = function(dom) {
+  this.buffer(dom);
 }.chain();
 
 // EXAMPLE
-/*dorm.render({
+dorm.render({
   "html": {
     "events" : {
       click : function(){}
@@ -109,7 +117,7 @@ dorm.render = function(dom) {
       {
         "head": {
           "children": [
-            { "meta": {}}, 
+            { "meta": {}},
             {"link": {}}, 
             { "title": { "children" : [{"text" : "hello world"}] }}, 
             {"script" : {"attr":{"href": "//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"}}}
@@ -143,6 +151,4 @@ dorm.render = function(dom) {
       }
     ]
   }
-});*/
-
-dorm.render("");
+});
