@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /*
   DORM (Document Object Render Model)
   author: Mariz Melo (c) MIT 2013
