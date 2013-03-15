@@ -47,7 +47,7 @@ dorm.render = function(dom) {
     console.log(opentag); // writes the open tag element
     
     if(dom[key]["text"]) {
-      console.log( "    " + dom[key]["text"] );
+      console.log( "  " + dom[key]["text"] );
     }
     
     if(dom[key]["children"] && dom[key]["children"].length > 0) {
