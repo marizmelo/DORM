@@ -1,3 +1,4 @@
++ prettify option with commander
 + make work on the client as well
 + convert into NPM module
 + tabspaces for indentation
@@ -12,3 +13,5 @@
 - transfer text to children element
 - Add chain methods
 - find solution for <span> in the middle of TEXT
+- add -pretty option for indented output, otherwise will be minified
+- doctype
