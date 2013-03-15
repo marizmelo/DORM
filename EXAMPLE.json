@@ -24,7 +24,8 @@
             {
               "div": {
                 "attr" : {
-                  "id": "mydiv"
+                  "id": "mydiv",
+                  "style" : { "background-color" : "red", "color" : "white" }
                 },
                 "children" : [{"text" : "Hi there"}]
               }

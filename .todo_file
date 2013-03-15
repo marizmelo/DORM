@@ -1,7 +1,6 @@
 + prettify option with commander
 + make work on the client as well
 + convert into NPM module
-+ tabspaces for indentation
 + STYLE method
 + include commander for command-line options
 + Pretty identation for output
@@ -14,3 +13,4 @@
 - find solution for <span> in the middle of TEXT
 - add -pretty option for indented output, otherwise will be minified
 - doctype
+- tabspaces for indentation

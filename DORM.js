@@ -44,20 +44,27 @@ dorm.attr = function (attr) {
       break;
       case "style":
         attreturn += dorm.style(attr[key]);
+      break;
       default:
         attreturn += " " + key + "=\""+ attr[key] + "\"";
       break;
     }
   }
   return attreturn;
-}
+};
+
+// STYLES
+dorm.style = function(styles) {
+  // receive an OBJECT with CSS properties/ values and render as a style HTML attribute
+  return " style=\"" + "\"";
+};
 
 
 // CLASSES
 dorm.class = function(classes) {
   // receive an ARRAY with classes of the element and generate HTML syntax
-  return " class=\""+classes.toString().replace(","," ")+"\"";  // convert array to CVS and replace commas with spaces
-}
+  return " class=\"" + classes.toString().replace(","," ") + "\"";  // convert array to CVS and replace commas with spaces
+};
 
 
 // HTML OPEN TAG
@@ -73,14 +80,14 @@ dorm.tag = function(tag, attr) {
       return "<" + tag + ">";  
     }
   }
-}
+};
 
 
 // HTML CLOSE TAG
 dorm.tagclose = function(tag) {
 
-  return "</"+tag+">";
-}
+  return "</" + tag + ">";
+};
 
 
 // BUFFER FOR DORM
@@ -130,3 +137,55 @@ dorm.render = function(dom) {
   }
 
 }.chain();  // chain method (you can call multiple times like .render().render() etc)
+
+
+// EXAMPLE
+dorm.render({
+  "doctype": "",
+  "html": {
+    "attr" : { 
+      "class": [
+      "responsive",
+      "width-full"
+      ]
+    },
+    "children": [
+      {
+        "head": {
+          "children": [
+            { "meta": {}},
+            {"link": {}}, 
+            { "title": { "children" : [{"text" : "hello world"}] }}, 
+            {"script" : {"attr":{"href": "//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"}}}
+          ]
+        }
+      },
+      {
+        "body": {
+          "children": [
+            {
+              "div": {
+                "attr" : {
+                  "id": "mydiv",
+                  "style" : { "background-color" : "red", "color" : "white" }
+                },
+                "children" : [{"text" : "Hi there"}]
+              }
+            },
+            {
+              "div": {
+                "attr" : {
+                  "id": "mydiv2",
+                  "name": "mydiv2name"
+                },
+                "children":[
+                {"p" : {"children" : [{ "text" : "hello" }, { "span" :  {"children" : [{ "text" : "world" }]} }, {"text":"again"}]}}
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+});
