@@ -6,3 +6,4 @@
 - deal with self-closed elements like <br>
 - Insert ATTR on tags
 - Insert TEXT as content of TAG
+- transfer text to children element

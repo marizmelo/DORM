@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /*
   DORM (Document Object Render Model)
   author: Mariz Melo (c) MIT 2013
@@ -56,28 +55,30 @@ dorm.render = function(dom) {
   // look for all tag elements
   for (var key in dom) {
     
-    console.log( dorm.tag(key, dom[key]["attr"]) ); // writes the open tag element
-    
     // if element has TEXT content display
-    if(dom[key]["text"]) {
-      console.log( "  " + dom[key]["text"] );
-    }
+    if(key === "text") {
+      console.log( dom[key] );
+    }else{
+
+      console.log( dorm.tag(key, dom[key]["attr"]) ); // writes the open tag element
     
-    // look for children nodes
-    if(dom[key]["children"] && dom[key]["children"].length > 0) {
+      // look for children nodes
+      if(dom[key]["children"] && dom[key]["children"].length > 0) {
 
-      // go over all children elements
-      for(var i=0; i<= dom[key]["children"].length; ++i) {
-        dorm.render(dom[key]["children"][i]); // recursive call for other tag elements
+        // go over all children elements
+        for(var i=0; i<= dom[key]["children"].length; ++i) {
+          dorm.render(dom[key]["children"][i]); // recursive call for other tag elements
+        }
       }
-    }
-  
-    // check for self-closing elements
-    if(dorm.model.selfclose.indexOf(key) == -1){
-      console.log( dorm.tagclose(key) );
-    }
 
-  }//for
+      // check for self-closing elements
+      if(dorm.model.selfclose.indexOf(key) == -1){
+        console.log( dorm.tagclose(key) );
+      }
+
+    }//if-else (key === "text")
+
+  }//for (var key in dom)
 };
 
 dorm.render({
@@ -85,7 +86,7 @@ dorm.render({
     "events" : {
       click : function(){}
     },
-    "attr" : {
+    "attr" : { 
       "class": [
       "responsive",
       "width-full"
@@ -101,7 +102,7 @@ dorm.render({
               "link": {
               },
               "title": {
-                "text" : "hello world"
+                "children" : [{"text" : "hello world"}]
               }
             }
           ]
@@ -115,7 +116,7 @@ dorm.render({
                 "attr" : {
                   "id": "mydiv"
                 },
-                "text" : "Hi there"
+                "children" : [{"text" : "Hi there"}]
               }
             },
             {
@@ -125,7 +126,7 @@ dorm.render({
                   "name": "mydiv2name"
                 },
                 "children":[
-                  { "span" :  { "text" : "hello you" } }
+                  { "text" : "hello" }, { "span" :  {"children" : [{ "text" : "world" }]} }, {"text":"again"}
                 ]
               }
             }
