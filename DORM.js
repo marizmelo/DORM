@@ -46,10 +46,6 @@ dorm.attr = function (attr) {
   return attreturn;
 }
 
-dorm.pretty = function (code) {
-  // HTML code indentation
-}
-
 dorm.class = function(classes) {
   // receive an array with classes of the element and generate HTML syntax
   return " class=\""+classes.toString().replace(","," ")+"\"";  // convert array to CVS and replace commas with spaces
@@ -113,9 +109,9 @@ dorm.render = function(dom) {
   this.buffer(dom); // buffer HTML output
 
   if(this.model.pretty) {
-    console.log( html.prettyPrint(this.model.buffer, {indent_size: this.model.ident}) );
+    process.stdout.write( html.prettyPrint(this.model.buffer, {indent_size: this.model.ident}) );
   } else {
-    console.log(this.model.buffer); // display HTML output
+    process.stdout.write(this.model.buffer); // display HTML output
   }
 
 }.chain();
