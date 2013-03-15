@@ -6,11 +6,15 @@ DORM (Document Object Render Model). Render HTML elements and attach properties 
 
 TODO
 ----
-     1	+ include commander for command-line options
-     2	+ bind JavaScript events
-     3	+ Pretty identation for output
-     4	+ find solution for <span> in the middle of TEXT
-     5	- Insert inline stylesheets
-     6	- deal with self-closed elements like <br>
-     7	- Insert ATTR on tags
-     8	- Insert TEXT as content of TAG
+     1	+ tabspaces for indentation
+     2	+ Add chain methods
+     3	+ STYLE method
+     4	+ include commander for command-line options
+     5	+ bind JavaScript events
+     6	+ Pretty identation for output
+     7	+ find solution for <span> in the middle of TEXT
+     8	- Insert inline stylesheets
+     9	- deal with self-closed elements like <br>
+    10	- Insert ATTR on tags
+    11	- Insert TEXT as content of TAG
+    12	- transfer text to children element
