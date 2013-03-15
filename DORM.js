@@ -6,11 +6,20 @@
 var DORM = function(){};
 var dorm = DORM.prototype;
 
-// data
+// configuration model
 dorm.model = {
   tabspace : 4,  // indentation space
   selfclose : ["meta", "br", "link"]
 }
+
+// function chains feature
+Function.prototype.chain = function() {
+  var self = this; // cache obj
+  return function() {
+    var ret = self.apply(this, arguments);
+    return ret === undefined ? this : ret;
+  }
+};
 
 dorm.attr = function (attr) {
   // return HTML attributes for tag elements
@@ -35,8 +44,8 @@ dorm.pretty = function (code) {
 }
 
 dorm.class = function(classes) {
-  // receive an array with classes of the element and generate html syntax
-  return " class=\""+classes.toString().replace(","," ")+"\"";
+  // receive an array with classes of the element and generate HTML syntax
+  return " class=\""+classes.toString().replace(","," ")+"\"";  // convert array to CVS and replace commas with spaces
 }
 
 dorm.tag = function(tag, attr) {
@@ -46,12 +55,12 @@ dorm.tag = function(tag, attr) {
   } else {
     return "<" + tag + ">";
   }
-}
+}.chain();
 
 dorm.tagclose = function(tag) {
   // return encapsulated closed tag element
   return "</"+tag+">";
-}
+}.chain();
 
 dorm.render = function(dom) {
   // renders the entire DORM objects
@@ -82,10 +91,10 @@ dorm.render = function(dom) {
     }//if-else (key === "text")
 
   }//for (var key in dom)
-};
+}.chain();
 
 // EXAMPLE
-dorm.render({
+/*dorm.render({
   "html": {
     "events" : {
       click : function(){}
@@ -134,4 +143,6 @@ dorm.render({
       }
     ]
   }
-});
+});*/
+
+dorm.render("");

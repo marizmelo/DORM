@@ -1,12 +1,14 @@
++ make work on the client as well
++ convert into NPM module
 + tabspaces for indentation
-+ Add chain methods
 + STYLE method
 + include commander for command-line options
 + bind JavaScript events
 + Pretty identation for output
-+ find solution for <span> in the middle of TEXT
 - Insert inline stylesheets
 - deal with self-closed elements like <br>
 - Insert ATTR on tags
 - Insert TEXT as content of TAG
 - transfer text to children element
+- Add chain methods
+- find solution for <span> in the middle of TEXT
