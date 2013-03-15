@@ -1,3 +1,6 @@
++ tabspaces for indentation
++ Add chain methods
++ STYLE method
 + include commander for command-line options
 + bind JavaScript events
 + Pretty identation for output

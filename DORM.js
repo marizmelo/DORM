@@ -8,6 +8,7 @@ var dorm = DORM.prototype;
 
 // data
 dorm.model = {
+  tabspace : 4,  // indentation space
   selfclose : ["meta", "br", "link"]
 }
 
@@ -19,6 +20,8 @@ dorm.attr = function (attr) {
       case "class":
         attreturn += dorm.class(attr[key]);
       break;
+      case "style":
+        attreturn += dorm.style(attr[key]);
       default:
         attreturn += " " + key + "=\""+ attr[key] + "\"";
       break;
@@ -81,6 +84,7 @@ dorm.render = function(dom) {
   }//for (var key in dom)
 };
 
+// EXAMPLE
 dorm.render({
   "html": {
     "events" : {
