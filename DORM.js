@@ -1,3 +1,8 @@
+/*
+  DORM (Document Object Render Model)
+  author: Mariz Melo (c) MIT 2013
+*/
+
 var DORM = function(){};
 var dorm = DORM.prototype;
 
@@ -7,7 +12,7 @@ dorm.model = {
 }
 
 dorm.attr = function (attr) {
-  // return HTML attributes to object
+  // return HTML attributes for tag elements
   var attreturn = "";
   for (key in attr) {
     switch (key) {
@@ -23,44 +28,54 @@ dorm.attr = function (attr) {
 }
 
 dorm.pretty = function (code) {
-  // indent HTML code
+  // HTML code indentation
 }
 
 dorm.class = function(classes) {
   // receive an array with classes of the element and generate html syntax
-  //return " class=\""+escape(classes.toString())+"\"";
   return " class=\""+classes.toString().replace(","," ")+"\"";
 }
 
-dorm.render = function(dom) {
-    // console.log("Number of elements: "+Object.keys(dom).length);
-  for (var key in dom) {
+dorm.tag = function(tag, attr) {
+  // return encapsulated tag element
+  if(attr) {
+    return "<" + tag + dorm.attr(attr) + ">";
+  } else {
+    return "<" + tag + ">";
+  }
+}
 
-    var opentag = "<"+key;
+dorm.tagclose = function(tag) {
+  // return encapsulated closed tag element
+  return "</"+tag+">";
+}
+
+dorm.render = function(dom) {
+  // renders the entire DORM objects
+  // look for all tag elements
+  for (var key in dom) {
     
-    if(dom[key]["attr"]){
-      opentag += dorm.attr(dom[key]["attr"]) + ">";
-    }else{
-      opentag += ">";
-    }//if_else
+    console.log( dorm.tag(key, dom[key]["attr"]) ); // writes the open tag element
     
-    console.log(opentag); // writes the open tag element
-    
+    // if element has TEXT content display
     if(dom[key]["text"]) {
       console.log( "  " + dom[key]["text"] );
     }
     
+    // look for children nodes
     if(dom[key]["children"] && dom[key]["children"].length > 0) {
 
+      // go over all children elements
       for(var i=0; i<= dom[key]["children"].length; ++i) {
-        dorm.render(dom[key]["children"][i]);
-      }//for
-    }//if
+        dorm.render(dom[key]["children"][i]); // recursive call for other tag elements
+      }
+    }
   
     // check for self-closing elements
     if(dorm.model.selfclose.indexOf(key) == -1){
-      console.log("</"+key+">");
-    }//if
+      console.log( dorm.tagclose(key) );
+    }
+
   }//for
 };
 

@@ -1,4 +1,3 @@
-+ add STYLE to methods
 + include commander for command-line options
 + bind JavaScript events
 + Pretty identation for output
