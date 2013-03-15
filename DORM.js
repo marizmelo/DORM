@@ -17,7 +17,7 @@ dorm.model = {
   indent : 4  // indentation spaces
 , selfclose : ["meta", "br", "hr", "link", "doctype"]  // self-closed HTML tags
 , buffer : ""
-, pretty : 0 // 0 - minify, 1 - prettify
+, pretty : 1 // 0 - minify, 1 - prettify
 , doctype : "!DOCTYPE html"
 }
 
@@ -83,10 +83,9 @@ dorm.tagclose = function(tag) {
 }
 
 
-
+// BUFFER FOR DORM
 dorm.buffer = function(dom) {
-  // buffers the entire DORM objects
-  
+
   // look for all tag elements
   for (var key in dom) {
     
@@ -117,7 +116,7 @@ dorm.buffer = function(dom) {
 };
 
 
-
+// RENDER DORM
 dorm.render = function(dom) {
   // calls buffer method and display buffer model data
 
@@ -131,57 +130,3 @@ dorm.render = function(dom) {
   }
 
 }.chain();  // chain method (you can call multiple times like .render().render() etc)
-
-
-// EXAMPLE
-dorm.render({
-  "doctype": "",
-  "html": {
-    "events" : {
-      click : function(){}
-    },
-    "attr" : { 
-      "class": [
-      "responsive",
-      "width-full"
-      ]
-    },
-    "children": [
-      {
-        "head": {
-          "children": [
-            { "meta": {}},
-            {"link": {}}, 
-            { "title": { "children" : [{"text" : "hello world"}] }}, 
-            {"script" : {"attr":{"href": "//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"}}}
-          ]
-        }
-      },
-      {
-        "body": {
-          "children": [
-            {
-              "div": {
-                "attr" : {
-                  "id": "mydiv"
-                },
-                "children" : [{"text" : "Hi there"}]
-              }
-            },
-            {
-              "div": {
-                "attr" : {
-                  "id": "mydiv2",
-                  "name": "mydiv2name"
-                },
-                "children":[
-                {"p" : {"children" : [{ "text" : "hello" }, { "span" :  {"children" : [{ "text" : "world" }]} }, {"text":"again"}]}}
-                ]
-              }
-            }
-          ]
-        }
-      }
-    ]
-  }
-});

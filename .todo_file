@@ -4,7 +4,6 @@
 + tabspaces for indentation
 + STYLE method
 + include commander for command-line options
-+ bind JavaScript events
 + Pretty identation for output
 - Insert inline stylesheets
 - deal with self-closed elements like <br>

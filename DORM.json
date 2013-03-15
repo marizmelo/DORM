@@ -1,0 +1,15 @@
+{
+  "doctype": "",
+  "html": {
+    "children": [
+      {
+        "head": {
+          "children": [
+            { "title": { "children" : [{"text" : "website title"}] }}
+          ]
+        }
+      },
+      { "body": {}  }
+    ]
+  }
+}
