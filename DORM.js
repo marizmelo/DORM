@@ -140,52 +140,24 @@ dorm.render = function(dom) {
 
 
 // EXAMPLE
-dorm.render({
-  "doctype": "",
-  "html": {
-    "attr" : { 
-      "class": [
-      "responsive",
-      "width-full"
-      ]
-    },
-    "children": [
-      {
-        "head": {
-          "children": [
-            { "meta": {}},
-            {"link": {}}, 
-            { "title": { "children" : [{"text" : "hello world"}] }}, 
-            {"script" : {"attr":{"href": "//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"}}}
-          ]
-        }
-      },
-      {
-        "body": {
-          "children": [
-            {
-              "div": {
-                "attr" : {
-                  "id": "mydiv",
-                  "style" : { "background-color" : "red", "color" : "white" }
+dorm.render(    {
+        "doctype" : {},
+        "html" : {
+            "children" : [
+                {
+                    "head" : {
+                        "children" : [
+                            { "title": { "children" : [{"text" : "website title"}] }}
+                        ]
+                    }
                 },
-                "children" : [{"text" : "Hi there"}]
-              }
-            },
-            {
-              "div": {
-                "attr" : {
-                  "id": "mydiv2",
-                  "name": "mydiv2name"
-                },
-                "children":[
-                {"p" : {"children" : [{ "text" : "hello" }, { "span" :  {"children" : [{ "text" : "world" }]} }, {"text":"again"}]}}
-                ]
-              }
-            }
-          ]
+                {
+                    "body" : {
+                        "children" : [
+                            { "div": {} }
+                        ]
+                    }
+                }
+            ]
         }
-      }
-    ]
-  }
-});
+    });
