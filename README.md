@@ -74,7 +74,8 @@ OPTIONS
 
       -h, --help     output usage information
       -V, --version  output the version number
-      -m, --minify   
+      -m, --minify   Minify the HTML output
+      -o, --output   Create a HTML output file with the same name as the input file
 
 
 TODO
