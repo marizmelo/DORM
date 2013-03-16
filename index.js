@@ -10,7 +10,7 @@
 // DEPENDENCIES
 var program = require('commander')  // command line options
   , fs = require('fs')
-  , dorm = require("./lib/core.js");
+  , $ = require("./lib/core.js");
 
 function range(val) {
   return val.split('..').map(Number);
@@ -25,16 +25,15 @@ program
   .version('0.0.1')
   .usage('[options] <file>')
   .option('-m, --minify')
-  .option('-o, --output') //TODO
+  //.option('-o, --output') //TODO
   .parse(process.argv);
-
 
 // check if at least one input file was passed
 if(program.args){
 
   // check if the output file should be minified
   if(program.minify){
-    dorm.fn.model.minify = 1;
+    $.dorm.model.minify = 1;
   }
 
   // render HTML file
@@ -42,7 +41,10 @@ if(program.args){
     if (err) {
       return console.log("\nPlease specify an valid input file\n");
     }
-    data = JSON.parse(data);
-    dorm.fn.render(data);
+    $.dorm.render(JSON.parse(data));
+ 
+    if(program.output){ // create output file with content
+
+    }
   });
 }

@@ -7,4 +7,8 @@
   , "commander" : ""
   , "html" : ""
   }
+, "devDependencies": {
+    "mocha": "~1.0",
+    "chai" : "~0.5"
+  }
 }
