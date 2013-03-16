@@ -1,6 +1,6 @@
 {
   "name" : "dorm"
-, "description" : "DORM (Document Object Render Model). Render HTML elements and attach properties to them."
+, "description" : "DORM (Document Object Render Model). Render HTML documents with NodeJS using JavaScript objects."
 , "version" : "0.0.1"
 , "dependencies" : {
     "cheerio" : ""
