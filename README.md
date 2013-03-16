@@ -7,7 +7,9 @@ INSTALL
 -------
 Make sure you have NodeJS installed. Run the following command:
 
-    npm install dorm
+    npm install dorm -g
+
+**-g** option will install the npm package globally.
 
 
 EXAMPLE
