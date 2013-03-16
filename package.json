@@ -1,5 +1,5 @@
 {
-  "name" : "DORM"
+  "name" : "dorm"
 , "description" : "DORM (Document Object Render Model). Render HTML elements and attach properties to them."
 , "version" : "0.0.1"
 , "dependencies" : {
