@@ -14,7 +14,7 @@ EXAMPLE
 -------
 Here is a simple example how you can use DORM to render your HTML documents.
 
-First, write an DORM file containing a JSON structured object:
+First, write a DORM file containing a JSON structured object:
 
     {
       "doctype" : {},
