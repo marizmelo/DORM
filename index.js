@@ -24,8 +24,8 @@ function list(val) {
 program
   .version('0.0.1')
   .usage('[options] <file>')
-  .option('-m, --minify')
-  .option('-o, --output') 
+  .option('-m, --minify', 'Minify the HTML output')
+  .option('-o, --output', 'Create a HTML output file with the same name as the input file')
   .parse(process.argv);
 
 
