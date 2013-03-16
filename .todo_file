@@ -1,4 +1,3 @@
-+ auto executable program
 + travis
 + tests
 + JavaScript events
@@ -19,3 +18,4 @@
 - include commander for command-line options
 - minify option with commander
 - -o (output) will create HTML files as output with the same name as the JSON files of input
+- auto executable program
