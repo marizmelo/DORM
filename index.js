@@ -28,6 +28,7 @@ program
   .option('-o, --output') 
   .parse(process.argv);
 
+
 // check if at least one input file was passed
 if(program.args){
 
@@ -42,13 +43,13 @@ if(program.args){
       return console.log("\nPlease specify an valid input file\n");
     }
     
-    var output = $.dorm.render(JSON.parse(data));
- 
+    $.dorm.render(JSON.parse(data));
+
     if(program.output){ // create output file with content
      
       var newfile = ""+program.args[0].replace(".json", ".html");
 
-      fs.writeFile(newfile, output, function (err) {
+      fs.writeFile(newfile, $.dorm.pretty($.dorm.model.buffer), function (err) {
         if (err) { 
           console.log("\nError writing output file\n");
         } else {

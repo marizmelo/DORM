@@ -118,6 +118,12 @@ dorm.buffer = function(dom) {
 };
 
 
+dorm.pretty = function (buffer) {
+  // pretty HTML output
+  return html.prettyPrint(buffer, {indent_size: this.model.indent});
+}
+
+
 dorm.render = function(dom) {
   // calls buffer method and display buffer model data
 
@@ -127,7 +133,7 @@ dorm.render = function(dom) {
   if(this.model.minify) {
     process.stdout.write(this.model.buffer); // display HTML output
   } else {
-    process.stdout.write( html.prettyPrint(this.model.buffer, {indent_size: this.model.indent}) );
+    process.stdout.write( this.pretty(this.model.buffer) );
   }
 
 }.chain();  // chain method (you can call multiple times like .render().render() etc)
