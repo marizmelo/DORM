@@ -2,7 +2,6 @@
 + tests
 + JavaScript events
 + client version
-+ convert into NPM module
 - Insert inline stylesheets
 - deal with self-closed elements like <br>
 - Insert ATTR on tags
@@ -19,3 +18,4 @@
 - minify option with commander
 - -o (output) will create HTML files as output with the same name as the JSON files of input
 - auto executable program
+- convert into NPM module

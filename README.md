@@ -84,20 +84,20 @@ TODO
      2	+ tests
      3	+ JavaScript events
      4	+ client version
-     5	+ convert into NPM module
-     6	- Insert inline stylesheets
-     7	- deal with self-closed elements like <br>
-     8	- Insert ATTR on tags
-     9	- Insert TEXT as content of TAG
-    10	- transfer text to children element
-    11	- Add chain methods
-    12	- find solution for <span> in the middle of TEXT
-    13	- add -pretty option for indented output, otherwise will be minified
-    14	- doctype
-    15	- tabspaces for indentation
-    16	- STYLE method
-    17	- Pretty indentation for output
-    18	- include commander for command-line options
-    19	- minify option with commander
-    20	- -o (output) will create HTML files as output with the same name as the JSON files of input
-    21	- auto executable program
+     5	- Insert inline stylesheets
+     6	- deal with self-closed elements like <br>
+     7	- Insert ATTR on tags
+     8	- Insert TEXT as content of TAG
+     9	- transfer text to children element
+    10	- Add chain methods
+    11	- find solution for <span> in the middle of TEXT
+    12	- add -pretty option for indented output, otherwise will be minified
+    13	- doctype
+    14	- tabspaces for indentation
+    15	- STYLE method
+    16	- Pretty indentation for output
+    17	- include commander for command-line options
+    18	- minify option with commander
+    19	- -o (output) will create HTML files as output with the same name as the JSON files of input
+    20	- auto executable program
+    21	- convert into NPM module
