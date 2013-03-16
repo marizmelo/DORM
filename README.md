@@ -1,7 +1,7 @@
 DORM
 ====
 
-DORM (Document Object Render Model). Render HTML documents with NodeJS using JavaScript objects.
+DORM (Document Object Render Model). Render HTML documents using JavaScript objects.
 
 INSTALL
 -------
