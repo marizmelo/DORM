@@ -25,7 +25,7 @@ program
   .version('0.0.1')
   .usage('[options] <file>')
   .option('-m, --minify')
-  //.option('-o, --output') //TODO
+  .option('-o, --output') 
   .parse(process.argv);
 
 // check if at least one input file was passed
@@ -41,10 +41,21 @@ if(program.args){
     if (err) {
       return console.log("\nPlease specify an valid input file\n");
     }
-    $.dorm.render(JSON.parse(data));
+    
+    var output = $.dorm.render(JSON.parse(data));
  
     if(program.output){ // create output file with content
+     
+      var newfile = ""+program.args[0].replace(".json", ".html");
 
+      fs.writeFile(newfile, output, function (err) {
+        if (err) { 
+          console.log("\nError writing output file\n");
+        } else {
+          console.log("\nOutput file successfully saved\n");
+        }
+      });
     }
+
   });
 }

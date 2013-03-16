@@ -79,24 +79,24 @@ OPTIONS
 
 TODO
 ----
-     1	+ auto executable program
-     2	+ travis
-     3	+ tests
-     4	+ JavaScript events
-     5	+ client version
-     6	+ convert into NPM module
-     7	- Insert inline stylesheets
-     8	- deal with self-closed elements like <br>
-     9	- Insert ATTR on tags
-    10	- Insert TEXT as content of TAG
-    11	- transfer text to children element
-    12	- Add chain methods
-    13	- find solution for <span> in the middle of TEXT
-    14	- add -pretty option for indented output, otherwise will be minified
-    15	- doctype
-    16	- tabspaces for indentation
-    17	- STYLE method
-    18	- Pretty indentation for output
-    19	- include commander for command-line options
-    20	- minify option with commander
-    21	- -o (output) will create HTML files as output with the same name as the JSON files of input
+     1	+ travis
+     2	+ tests
+     3	+ JavaScript events
+     4	+ client version
+     5	+ convert into NPM module
+     6	- Insert inline stylesheets
+     7	- deal with self-closed elements like <br>
+     8	- Insert ATTR on tags
+     9	- Insert TEXT as content of TAG
+    10	- transfer text to children element
+    11	- Add chain methods
+    12	- find solution for <span> in the middle of TEXT
+    13	- add -pretty option for indented output, otherwise will be minified
+    14	- doctype
+    15	- tabspaces for indentation
+    16	- STYLE method
+    17	- Pretty indentation for output
+    18	- include commander for command-line options
+    19	- minify option with commander
+    20	- -o (output) will create HTML files as output with the same name as the JSON files of input
+    21	- auto executable program
