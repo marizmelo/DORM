@@ -9,6 +9,7 @@
 
 // DEPENDENCIES
 var program = require('commander')  // command line options
+  , fs = require('fs')
   , dorm = require("./lib/core.js");
 
 function range(val) {
@@ -19,21 +20,29 @@ function list(val) {
   return val.split(',');
 }
 
+// commander options
 program
   .version('0.0.1')
   .usage('[options] <file>')
   .option('-m, --minify')
-  .option('-p, --pretty')
-  .option('-r, --range <a>..<b>', 'A range', range)
-  .option('-l, --list <items>', 'A list', list)
-  .option('-o, --optional [value]', 'An optional value')
+  .option('-o, --output') //TODO
   .parse(process.argv);
 
-console.log(' minify: %j', program.minify);
-console.log(' int: %j', program.integer);
-console.log(' float: %j', program.pretty);
-console.log(' optional: %j', program.optional);
-program.range = program.range || [];
-console.log(' range: %j..%j', program.range[0], program.range[1]);
-console.log(' list: %j', program.list);
-console.log(' args: %j', program.args);
+
+// check if at least one input file was passed
+if(program.args){
+
+  // check if the output file should be minified
+  if(program.minify){
+    dorm.fn.model.minify = 1;
+  }
+
+  // render HTML file
+  fs.readFile(""+program.args[0], function read(err,data) {
+    if (err) {
+      return console.log("\nPlease specify an valid input file\n");
+    }
+    data = JSON.parse(data);
+    dorm.fn.render(data);
+  });
+}

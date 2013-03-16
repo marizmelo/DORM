@@ -1,7 +1,6 @@
-+ minify option with commander
++ -o (output) will create HTML files as output with the same name as the JSON files of input
 + JavaScript events
 + client version
-+ prettify option with commander
 + convert into NPM module
 - Insert inline stylesheets
 - deal with self-closed elements like <br>
@@ -16,3 +15,4 @@
 - STYLE method
 - Pretty indentation for output
 - include commander for command-line options
+- minify option with commander
