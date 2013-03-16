@@ -1,8 +1,8 @@
++ minify option with commander
 + JavaScript events
 + client version
 + prettify option with commander
 + convert into NPM module
-+ include commander for command-line options
 - Insert inline stylesheets
 - deal with self-closed elements like <br>
 - Insert ATTR on tags
@@ -15,3 +15,4 @@
 - tabspaces for indentation
 - STYLE method
 - Pretty indentation for output
+- include commander for command-line options

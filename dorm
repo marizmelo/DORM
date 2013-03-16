@@ -22,15 +22,16 @@ function list(val) {
 program
   .version('0.0.1')
   .usage('[options] <file>')
-  .option('-c, --compress <n>', 'An integer argument', parseInt)
-  .option('-f, --float <n>', 'A float argument', parseFloat)
+  .option('-m, --minify')
+  .option('-p, --pretty')
   .option('-r, --range <a>..<b>', 'A range', range)
   .option('-l, --list <items>', 'A list', list)
   .option('-o, --optional [value]', 'An optional value')
   .parse(process.argv);
 
+console.log(' minify: %j', program.minify);
 console.log(' int: %j', program.integer);
-console.log(' float: %j', program.float);
+console.log(' float: %j', program.pretty);
 console.log(' optional: %j', program.optional);
 program.range = program.range || [];
 console.log(' range: %j..%j', program.range[0], program.range[1]);
