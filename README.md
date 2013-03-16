@@ -1,11 +1,14 @@
 DORM
 ====
 
-DORM (Document Object Render Model). Render HTML elements and attach properties to them.
+DORM (Document Object Render Model). Render HTML documents with NodeJS using JavaScript objects.
 
 INSTALL
 -------
-todo
+Make sure you have NodeJS installed. Run the following command:
+
+    npm install dorm
+
 
 EXAMPLE
 -------
@@ -54,7 +57,7 @@ Simple.
 
 OPTIONS
 -------
-
+todo
 
 TODO
 ----

@@ -1,9 +1,8 @@
++ JavaScript events
++ client version
 + prettify option with commander
-+ make work on the client as well
 + convert into NPM module
-+ STYLE method
 + include commander for command-line options
-+ Pretty identation for output
 - Insert inline stylesheets
 - deal with self-closed elements like <br>
 - Insert ATTR on tags
@@ -14,3 +13,5 @@
 - add -pretty option for indented output, otherwise will be minified
 - doctype
 - tabspaces for indentation
+- STYLE method
+- Pretty identation for output
