@@ -11,4 +11,4 @@
 var program = require('commander')  // command line options
   , dorm = require("./lib/core.js");
 
-  console.log(dorm)
+  console.log(dorm);
