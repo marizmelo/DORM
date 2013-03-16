@@ -8,7 +8,7 @@
   , "html" : ""
   }
 , "bin": {
-    "dorm" : "./bin/dorm"
+    "dorm" : "index.js"
   }
 , "devDependencies": {
     "mocha": "~1.0",
