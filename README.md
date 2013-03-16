@@ -82,6 +82,8 @@ OPTIONS
 
 TODO
 ----
+Todo list made with [todo.c](https://github.com/marizmelo/todo.c):
+
      1	+ travis
      2	+ tests
      3	+ JavaScript events
