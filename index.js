@@ -10,7 +10,7 @@
 // DEPENDENCIES
 var program = require('commander')  // command line options
   , fs = require('fs')
-  , $ = require("./bin/dorm");
+  , $ = require("./lib/dorm");
 
 function range(val) {
   return val.split('..').map(Number);
