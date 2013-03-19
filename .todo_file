@@ -1,3 +1,7 @@
++ automatic children object, check for predefined options [attr,text, etc]
++ include doctype number version instead of string
++ convert to CoffeeScript objects
++ html2js js2html modules inside DORM
 + travis
 + tests
 + JavaScript events
