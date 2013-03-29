@@ -1,3 +1,4 @@
++ -j option to convert to jade
 + automatic children object, check for predefined options [attr,text, etc]
 + include doctype number version instead of string
 + convert to CoffeeScript objects
