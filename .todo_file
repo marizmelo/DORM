@@ -1,3 +1,5 @@
++ small tool to combine multiple md files
++ watch function - re-generate files uppon change
 + -j option to convert to jade
 + automatic children object, check for predefined options [attr,text, etc]
 + include doctype number version instead of string
