@@ -57,6 +57,5 @@ if(program.args.length){
         }
       });
     }
-
   });
 }
