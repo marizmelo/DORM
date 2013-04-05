@@ -10,7 +10,8 @@
 // DEPENDENCIES
 var program = require('commander')  // command line options
   , fs = require('fs')
-  , $ = require("./lib/dorm");
+  , j$ = require('./lib/dormjade')
+  , $ = require('./lib/dorm');
 
 function range(val) {
   return val.split('..').map(Number);
@@ -26,6 +27,7 @@ program
   .usage('[options] <file>')
   .option('-m, --minify', 'Minify the HTML output')
   .option('-o, --output', 'Create a HTML output file with the same name as the input file')
+  .option('-j, --jade', 'Create a JADE output file with the same name as the input file')
   .parse(process.argv);
 
 

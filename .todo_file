@@ -1,4 +1,4 @@
-+ small tool to combine multiple md files
++ if extension is .coffee convert to js and than to HTML
 + watch function - re-generate files uppon change
 + -j option to convert to jade
 + automatic children object, check for predefined options [attr,text, etc]
