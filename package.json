@@ -12,6 +12,7 @@
   , "html" : ""
   , "jade" : ""
   , "html2jade" : ""
+  , "handlebars" : ""
   }
 , "devDependencies": {
     "mocha": "~1.0",

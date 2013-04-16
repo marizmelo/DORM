@@ -40,9 +40,9 @@ First, write a DORM file containing a JSON structured object:
       }
     }
 
-Save this file as **example.json**. Execute the **dorm** program and pass this file as parameter.
+Save this file as **example.dorm**. Execute the **dorm** program and pass this file as parameter.
 
-    dorm example.json
+    dorm example.dorm
 
 Output:
 

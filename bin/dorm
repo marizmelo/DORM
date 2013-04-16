@@ -11,7 +11,9 @@
 var program = require('commander')  // command line options
   , fs = require('fs')
   , j$ = require('../lib/dormjade')
-  , $ = require('../lib/dorm');
+  , $ = require('../lib/dorm')
+  , bars = require('handlebars')
+  , fs = require('fs');
 
 function range(val) {
   return val.split('..').map(Number);
@@ -28,36 +30,68 @@ program
   .option('-m, --minify', 'Minify the HTML output')
   .option('-o, --output', 'Create a HTML output file with the same name as the input file')
   .option('-j, --jade', 'Create a JADE output file with the same name as the input file')
+  .option('-t, --template', 'Create a JADE output file with the same name as the input file')
   .parse(process.argv);
 
 
 // check if at least one input file was passed
-if(program.args.length){
+if (program.args.length) {
 
   // check if the output file should be minified
-  if(program.minify){
-    $.dorm.model.minify = 1;
+  if (program.minify) {
+    $.model.minify = 1;
   }
 
   // render HTML file
-  fs.readFile(""+program.args[0], function read(err,data) {
+  fs.readFile(program.args[0], function read(err, data) {
     if (err) {
       return console.log("\nPlease specify an valid input file\n");
     }
     
-    $.render(JSON.parse(data));
+    // check if file exists
+    function exists(file) {
+      var stats;
+      try {
+        stats = fs.lstatSync(file);
+        if (stats.isFile()) {
+          return true;
+        }
+      }catch (e){
+        return false;
+      }
+        return false;     
+    }// function
 
-    if(program.output){ // create output file with content
+
+    if(program.template) {  // convert templates into data
+      var source = $.render(JSON.parse(data))
+        , template = bars.compile(source)
+        , data2 = "";
+
+      // check for json file on same directory with the same name as dorm file
+      if(exists(program.args[0].replace(".dorm", ".json"))){
+        data2 = fs.readFileSync(program.args[0].replace(".dorm", ".json"));
+        process.stdout.write(template(JSON.parse(data2.toString())));
+      } else {
+        process.stdout.write("\nPlease specify an valid template file\n\n");
+      }//if_else
+
+    } else {
+      process.stdout.write($.render(JSON.parse(data)));
+    }//if_else
+
+    if(program.output) { // create output file with content
      
       var newfile = ""+program.args[0].replace(".json", ".html");
 
       fs.writeFile(newfile, $.pretty($.model.buffer), function (err) {
         if (err) { 
-          console.log("\nError writing output file\n");
+          process.stdout.write("\nError writing output file\n");
         } else {
-          console.log("\nOutput file successfully saved\n");
+          process.stdout.write("\nOutput file successfully saved\n");
         }
       });
     }
+
   });
 }
