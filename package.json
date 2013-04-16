@@ -10,7 +10,7 @@
   , "html2jade" : ""
   }
 , "bin": {
-    "dorm" : "index.js"
+    "dorm" : "./bin/dorm"
   }
 , "devDependencies": {
     "mocha": "~1.0",
