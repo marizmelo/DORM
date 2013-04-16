@@ -1,6 +1,4 @@
-+ HandleBars to render template variables
 + include file watch: https://github.com/mikeal/watch
-+ add .dorm extension for dorm files
 + if extension is .coffee convert to js and than to HTML
 + watch function - re-generate files uppon change
 + -j option to convert to jade
@@ -29,3 +27,5 @@
 - -o (output) will create HTML files as output with the same name as the JSON files of input
 - auto executable program
 - convert into NPM module
+- HandleBars to render template variables
+- add .dorm extension for dorm files

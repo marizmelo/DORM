@@ -1,7 +1,7 @@
 {
   "name" : "dorm"
 , "description" : "DORM (Document Object Render Model). Render HTML documents using JavaScript objects."
-, "version" : "0.0.4"
+, "version" : "0.0.5"
 , "main": "index.js"
 , "bin": {
     "dorm" : "./bin/dorm"
