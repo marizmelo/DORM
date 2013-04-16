@@ -1,16 +1,17 @@
 {
   "name" : "dorm"
 , "description" : "DORM (Document Object Render Model). Render HTML documents using JavaScript objects."
-, "version" : "0.0.3"
+, "version" : "0.0.4"
+, "main": "index.js"
+, "bin": {
+    "dorm" : "./bin/dorm"
+  }
 , "dependencies" : {
     "cheerio" : ""
   , "commander" : ""
   , "html" : ""
   , "jade" : ""
   , "html2jade" : ""
-  }
-, "bin": {
-    "dorm" : "./bin/dorm"
   }
 , "devDependencies": {
     "mocha": "~1.0",

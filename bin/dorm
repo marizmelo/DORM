@@ -23,7 +23,7 @@ function list(val) {
 
 // commander options
 program
-  .version('0.0.3')
+  .version('0.0.4')
   .usage('[options] <file>')
   .option('-m, --minify', 'Minify the HTML output')
   .option('-o, --output', 'Create a HTML output file with the same name as the input file')
@@ -45,13 +45,13 @@ if(program.args.length){
       return console.log("\nPlease specify an valid input file\n");
     }
     
-    $.dorm.render(JSON.parse(data));
+    $.render(JSON.parse(data));
 
     if(program.output){ // create output file with content
      
       var newfile = ""+program.args[0].replace(".json", ".html");
 
-      fs.writeFile(newfile, $.dorm.pretty($.dorm.model.buffer), function (err) {
+      fs.writeFile(newfile, $.pretty($.model.buffer), function (err) {
         if (err) { 
           console.log("\nError writing output file\n");
         } else {

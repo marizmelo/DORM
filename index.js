@@ -6,4 +6,5 @@
   github: marizmelo/DORM
   desc:   dorm module
 */
-module.exports = require('./lib/dorm');
+var dorm = require('./lib/dorm');
+module.exports = dorm;

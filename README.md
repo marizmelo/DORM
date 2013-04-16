@@ -71,6 +71,9 @@ To minify the file output run the command above adding the parameter **-m** or *
 VERSION LOG
 -----------
 
+* 0.0.4
+Node module added. You can use DORM inside your node application now.
+
 * 0.0.3
 Convert output to Jade
 
