@@ -7,11 +7,9 @@
     "dorm" : "./bin/dorm"
   }
 , "dependencies" : {
-    "cheerio" : ""
-  , "commander" : ""
+    "commander" : ""
   , "html" : ""
   , "jade" : ""
-  , "html2jade" : ""
   , "handlebars" : ""
   }
 , "devDependencies": {

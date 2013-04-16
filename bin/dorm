@@ -30,7 +30,7 @@ program
   .option('-m, --minify', 'Minify the HTML output')
   .option('-o, --output', 'Create a HTML output file with the same name as the input file')
   .option('-j, --jade', 'Create a JADE output file with the same name as the input file')
-  .option('-t, --template', 'Create a JADE output file with the same name as the input file')
+  .option('-t, --template', 'Render HANDLERBARS template file with the same name as the input file')
   .parse(process.argv);
 
 
