@@ -1,3 +1,4 @@
++ make compatible with Express to use as view engine
 + include file watch: https://github.com/mikeal/watch
 + if extension is .coffee convert to js and than to HTML
 + watch function - re-generate files uppon change

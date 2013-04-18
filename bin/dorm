@@ -25,7 +25,7 @@ function list(val) {
 
 // commander options
 program
-  .version('0.0.4')
+  .version('0.0.5')
   .usage('[options] <file>')
   .option('-m, --minify', 'Minify the HTML output')
   .option('-o, --output', 'Create a HTML output file with the same name as the input file')
